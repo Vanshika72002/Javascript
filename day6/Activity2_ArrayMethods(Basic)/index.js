@@ -1,0 +1,14 @@
+const originalArray=[12,34,56,78];
+console.log(originalArray);
+console.log("inserting element at the end");
+originalArray.push(90);
+console.log(originalArray);
+console.log("removing element from the end");
+originalArray.pop();
+console.log(originalArray);
+console.log("inserting element at the beginning");
+originalArray.unshift(90);
+console.log(originalArray);
+console.log("removing element from the beginning");
+originalArray.shift();
+console.log(originalArray);
