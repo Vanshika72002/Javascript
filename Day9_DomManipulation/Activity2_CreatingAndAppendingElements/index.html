@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>One</li>
+        <li>Two</li>
+        <li>Three</li>
+    </ul>
+</body>
+<script>
+    //Creating new div 
+    const p=document.createElement('p');
+    //text Node 
+    const textWithinP=document.createTextNode("This para is created by javascipt");
+    //adding text to div
+    p.appendChild(textWithinP);
+    //adding div to web page
+    document.body.appendChild(p);
+    //Selecting ul
+    const ul=document.querySelector('ul');
+    //creating list element
+    const li=document.createElement('li');
+    //adding text to li
+    li.appendChild(document.createTextNode('Four'));
+    //adding li to ul
+    ul.append(li);
+</script>
+</html>

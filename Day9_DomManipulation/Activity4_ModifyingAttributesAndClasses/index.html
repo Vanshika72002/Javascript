@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            height: 100vh;
+            width:100vw; 
+            border-width: 10px; 
+            border-style: double;
+            border-color: red;        
+        }
+    </style>
+</head>
+<body>
+    <img src="https://i0.wp.com/picjumbo.com/wp-content/uploads/beautiful-nature-mountain-scenery-with-flowers-free-photo.jpg?w=2210&quality=70" title="click me to change image">
+
+</body>
+<script>
+    const img=document.querySelector('img');
+    // img.setAttribute("src",'https://cdn.pixabay.com/photo/2024/05/26/10/15/bird-8788491_1280.jpg')
+    img.addEventListener("click",function(e){
+        e.target.setAttribute("src",'https://cdn.pixabay.com/photo/2024/05/26/10/15/bird-8788491_1280.jpg')
+    })
+    img.style.setProperty('opacity','0.8');
+    img.style.removeProperty('opacity');
+</script>
+</html>

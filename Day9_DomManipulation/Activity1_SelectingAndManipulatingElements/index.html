@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="Head-1">
+        This is a heading
+    </h1>
+    <button id="change-content">Click Me to change above heading</button>
+    <button id="change-color">Click me to change the background color of text</button>
+</body>
+<script>
+    const head1=document.getElementById("Head-1");
+    document.getElementById("change-content").addEventListener("click",function(e){
+        
+         head1.textContent="This is changed heading";
+        (e.target.textContent="Clicked");
+    });
+    document.getElementById("change-color").addEventListener("click",function(e){
+        
+        (e.target.textContent="Clicked");
+        head1.style.backgroundColor="blue";
+   });
+   
+</script>
+</html>

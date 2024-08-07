@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    p{
+        border: 2px solid black;
+    }
+</style>
+<body>
+    <p id="para-1">
+        This is a para
+    </p>
+    <button id="change-content">Click Me to change above heading</button>
+    <p id="change-border-color">move mouse over me to see change in border color</p>
+</body>
+<script>
+    const p=document.getElementById("para-1");
+    document.getElementById("change-content").addEventListener("click",function(e){
+        
+         p.textContent="This is changed para";
+        (e.target.textContent="Clicked");
+    });
+    document.querySelector('#change-border-color').addEventListener('mouseover',function(e){
+        e.target.style.borderColor="pink";
+        e.target.style.padding="5px";
+        e.target.style.paddingLeft="15px";
+    })
+    document.querySelector('#change-border-color').addEventListener('mouseout',function(e){
+        e.target.style.borderColor="black";
+        
+        e.target.style.padding=null;
+        e.target.style.paddingLeft=null;
+    })
+</script>
+</html>

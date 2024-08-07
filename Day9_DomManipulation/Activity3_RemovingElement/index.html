@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <p>Paragraph </p>    
+    <button>Remove</button>
+    <ul>
+        <li>first</li>
+        <li>second</li>
+        <li>third</li>
+        <li>last</li>
+    </ul>
+    <button id="li-element">Remove last li</button>
+</body>
+<script>
+    const p=document.querySelector('p');
+    document.querySelector('button').addEventListener("click",function(e){
+        if(e.target.textContent=='Remove'){
+            document.querySelector('p').remove();
+            e.target.textContent='Add';
+        }else{
+            e.target.textContent='Remove';
+            document.body.prepend(p);
+        }    
+    })
+    document.querySelector('#li-element').addEventListener("click",function(e){
+    
+        document.querySelector('ul').lastElementChild.remove();
+    })
+</script>
+</html>
