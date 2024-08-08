@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .hide-me{
+        visibility: hidden;
+    }
+    .show-me{
+        visibility: visible;
+    }
+    </style>
+</head>
+<body>
+    <p>This is a paragraph whose content will change on click of the button below</p>
+    <button id="change-para">
+        Click me
+    </button>
+    <button id="toggle-image-visibility">Hide Image</button>
+    <img src="https://gratisography.com/wp-content/uploads/2024/01/gratisography-cyber-kitty-800x525.jpg">
+</body>
+<script>
+     document.querySelector("#change-para").addEventListener('click',function(e){
+        e.target.textContent="clicked"
+        document.querySelector('p').textContent="Paragraph content chnaged"
+     })
+     document.querySelector("#toggle-image-visibility").addEventListener('dblclick',function(e){
+        console.log("you double clicked");
+        if(e.target.textContent==="Hide Image"){
+            document.querySelector('img').className="hide-me"
+            e.target.textContent="Show Image";
+        }
+
+        else{
+            document.querySelector('img').className="show-me"
+            e.target.textContent="Hide Image";
+        }
+     })
+</script>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="backend.php">
+        <input placeholder="name">
+        <input placeholder="email">
+        <input placeholder="password">
+        <input type="submit" value="submit">
+    </form>
+    <select style="width: 100px;height:30px; margin-top: 20px;">
+        <option>Css</option>
+        <option>JS</option>
+        <option>C++</option>
+        <option>java</option>
+    </select>
+    <p>You selected : <span></span></p>
+</body>
+<script>
+    document.querySelector('form').addEventListener('submit',function(e){
+        e.preventDefault();
+    })
+    document.querySelector('select').addEventListener('change',function(e){
+        document.querySelector('span').textContent=e.target.value;
+    })
+</script>
+</html>

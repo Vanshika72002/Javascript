@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul >
+        <li style="cursor: pointer;">Lemonade</li>
+        <li style="cursor: pointer;">Virgin Mojito</li>
+        <li style="cursor: pointer;">Watermelon Mojito</li>
+        <li style="cursor: pointer;">Ocean Blue</li>
+    </ul>
+    <div id="parent" style="border: 2px solid black; margin: 12px;">
+    </div>
+    <input placeholder="how many divs inside the above div" type="number">
+    <input id="button" type="button" value="OK">
+</body>
+<script>
+    document.querySelector('ul').addEventListener('click',function(e){
+        console.log(e.target.textContent);
+    })
+    document.querySelector("div").addEventListener('click',function(e){
+        console.log(e.target.id);
+    })
+    let divs;
+    document.querySelector("#button").addEventListener('click',function(){
+         divs=document.querySelector("input").value;
+         for(var i=0;i<divs;i++){
+            let newDiv=document.createElement('div');
+            newDiv.id=Math.round(Math.random()*10+1);
+            newDiv.textContent="Div"+newDiv.id;
+            newDiv.style.border='2px solid black';
+            newDiv.style.margin="12px";
+            newDiv.style.padding="5px";
+            newDiv.style.display="inline-block";
+            newDiv.style.cursor="pointer";
+            // newDiv.style./
+            const maindiv=document.querySelector("div");
+            maindiv.appendChild(newDiv);
+        }
+    })
+    
+    // document.querySelector("#parent").addEventListener('click',  )
+</script>
+</html>
