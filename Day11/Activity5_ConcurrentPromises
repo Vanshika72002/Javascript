@@ -1,0 +1,86 @@
+//PROMISE.ALL() CASE1:ALL PROMISES ARE SUCCESS
+const p1=new Promise((resolve,reject)=>{
+    setTimeout(function(){
+        resolve("p1 successfull")}
+    ,2000);
+})
+const p2=new Promise((resolve,reject)=>{
+    setTimeout(function(){
+        resolve("p2 successfull")}
+    ,5000);
+})
+
+const p3=new Promise((resolve,reject)=>{
+    setTimeout(function(){
+        resolve("p3 successfull")}
+    ,7000);
+});
+Promise.all([p1,p2,p3]).then(output=>output.map(val=>console.log(val)));
+
+// p1 successfull
+// p2 successfull
+// p3 successfull
+//PROMISE.ALL() CASE2:A PROMISE FAILS
+
+const p4=new Promise((resolve,reject)=>{
+    setTimeout(function(){
+        resolve("p4 successfull")}
+    ,2000);
+})
+const p5=new Promise((resolve,reject)=>{
+    setTimeout(function(){
+        reject("p5Falied")}
+    ,5000);
+})
+
+const p6=new Promise((resolve,reject)=>{
+    setTimeout(function(){
+        resolve("p6 successfull")}
+    ,7000);
+});
+Promise.all([p4,p5,p6]).then(output=>output.map(val=>console.log(val))).catch(err=>console.error(err));
+
+
+//PROMISE.race() CASE1:ALL PROMISES ARE SUCCESS
+const p13=new Promise((resolve,reject)=>{
+    setTimeout(function(){
+        resolve("p13 successfull")}
+    ,10000);
+})
+const p14=new Promise((resolve,reject)=>{
+    setTimeout(function(){
+        resolve("p14 SUCCESS")}
+    ,5000);
+})
+
+const p15=new Promise((resolve,reject)=>{
+    setTimeout(function(){
+        resolve("p15 successfull")}
+    ,7000);
+});
+
+Promise.race([p13,p14,p15]).then(output=>console.log(output)).catch(err=>console.error(err));
+
+// p14 success
+
+
+//PROMISE.race() CASE2:A PROMISE FAILS
+const p16=new Promise((resolve,reject)=>{
+    setTimeout(function(){
+        reject("p16 FAILED")}
+    ,1000);
+})
+const p17=new Promise((resolve,reject)=>{
+    setTimeout(function(){
+        resolve("p17 successfull")}
+    ,5000);
+})
+
+const p18=new Promise((resolve,reject)=>{
+    setTimeout(function(){
+        resolve("p18 successfull")}
+    ,7000);
+});
+
+Promise.race([p16,p17,p18]).then(output=>console.log(output)).catch(err=>console.error(err));
+

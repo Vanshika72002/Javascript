@@ -1,0 +1,20 @@
+const pr=new Promise((resolve,reject)=>{
+    fetch("valid_url").then(response=>resolve(response)).catch(err=>reject(err))
+})
+
+async function handlePromise(){
+    const result=await pr;
+    console.log(result);
+}
+handlePromise();
+
+const pr2=new Promise((resolve,reject)=>{
+    fetch("WRONG_URL").then(response=>resolve(response)).catch(err=>reject(err))
+})
+
+async function handlePromise2(){
+    const result=await pr2;
+    console.log(result);
+}
+handlePromise2();
+//failed to parse url from "wrong_url"
